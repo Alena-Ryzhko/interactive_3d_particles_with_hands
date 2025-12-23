@@ -1,0 +1,20 @@
+Key Features Explained:
+
+Hand Tracking (MediaPipe):
+It tracks 21 specific points on the hand.
+Position: I use the palm center (Landmark 9) to move the 3D object.
+Scaling: I calculate the distance between the wrist and the middle finger tip. If you make a fist, the distance shortens, and the particles shrink.
+Tension/Expansion: I measure the "pinch" distance between the thumb and index finger. As you spread them apart, the particles expand outward from their base coordinates.
+
+3D Templates:
+Hearts: Uses the mathematical heart curve equation to plot points.
+Flowers: Uses a Phyllotaxis spiral (the same pattern found in sunflower seeds).
+Fireworks: Randomly distributes points within a sphere.
+
+Optimization:
+Uses BufferGeometry for high performance, allowing 5,000+ particles to run smoothly at 60fps on most devices.
+Uses AdditiveBlending to give the particles a "glowing" effect where they overlap.
+
+UI/UX:
+The UI uses a semi-transparent "Glassmorphism" effect.
+The video feed is mirrored and placed in the corner so you can see your hand's relationship to the sensor.
